@@ -10,10 +10,11 @@ import cartItem from '../components/CartItem';
 import { SidebarContext } from '../contexts/SidebarContext';
 //import cart context
 import { CartContext } from '../contexts/CartContext';
+import CartItem from '../components/CartItem';
 
 const Sidebar = () => {
   const { isOpen, handleClose } = useContext(SidebarContext);
-  console.log(useContext(CartContext));
+  const { cart } = useContext(CartContext);
   return (
   <div className={`${
     isOpen ? 'right-0' : '-right-full'
@@ -25,6 +26,11 @@ const Sidebar = () => {
       <div onClick={handleClose} className='cursor-pointer w-8 h-8 flex justify-center items-center' >
         <IoMdArrowForward className='text-2xl' />
       </div>
+    </div>
+    <div>
+      {cart.map((item) => {
+      return <CartItem item={item} key={item.id} />
+    })}
     </div>
   </div>
   );
