@@ -7,6 +7,9 @@ const CartProvider = ({children}) => {
   //cart state
   const [cart, setCart] = useState([]);
 
+   //item amount state
+   const [itemAmount, setItemAmount] = useState(0);
+
   //add to cart
   const addToCart = (product, id) => {
     const newItem = {...product, amount: 1 }
@@ -69,7 +72,7 @@ const CartProvider = ({children}) => {
         }
     }
 
-  return <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, increaseAmount, decreaseAmount }} >
+  return <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, increaseAmount, decreaseAmount, itemAmount}} >
     {children}
   </CartContext.Provider>;
 };
