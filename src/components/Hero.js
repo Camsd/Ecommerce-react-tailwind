@@ -19,6 +19,9 @@ const Hero = () => {
           AUTUMN SALE STYLISH <br />
           <span className='font-semibold'>WOMENS</span>
         </h1>
+        <Link to={'/'} className='self-start uppercase font-semibold border-b-2 border-primary'>
+          Discover More
+        </Link>
       </div>
       {/* image  */}
       <div className='hidden lg:block'>
